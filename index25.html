@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 25</title>
+</head>
+<body>
+    <script>
+        let w=100000000000000000000;
+        console.log(w);
+        let x = prompt('Введите число x: ');
+        let y = prompt('Введите число y: ');
+        checkX=false;
+        checkY=false;
+        for (let k=0; k<x.length; k++)
+        {
+        if(/^[0-9.-]/.test(x[k]))
+            {
+            checkX=true;
+            }
+         
+        else{
+            checkX=false;
+            break;}
+        }
+        for (let k=0; k<y.length; k++)
+        {
+        if(/^[0-9.-]/.test(y[k]))
+            {
+            checkY=true;
+            }
+            else{
+            checkY=false;
+            break;}
+        }
+        if(x.length>=6 || y.length>=4){
+            alert('Вы ввели слишком большое число!')
+        }
+        else{
+        if(checkX ==true && checkY==true){
+            let z = +x;
+            i = 2;
+            if (y==0)
+            {
+                z = 1;
+                alert('Число '+ x + ' в степени ' + y +' равно ' + z);
+            }
+            else if (y<0)
+            {
+                while(i <= y*(-1))
+                {
+                z = z*x;
+                if(z>10000000000000000000){
+                    alert('Вы ввели слишком большое число!')
+                    break;
+                }
+                i++;
+                }
+                z=1/z;
+                alert('Число '+ x + ' в степени ' + y +' равно ' + z);
+            }
+            else 
+            {
+                while(i <= y)
+                {
+                z = z*x;
+                if(z>10000000000000000000){
+                    alert('Вы ввели слишком большое число!')
+                    break;
+                }
+                i++;
+                }
+            alert('Число '+ x + ' в степени ' + y +' равно ' + z);
+            }
+            }
+        
+
+        else alert('Вы ввели не число. Повторите попытку!')
+        }
+    </script>
+    
+</body>
+</html>

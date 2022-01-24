@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример работы с пользователемt</title>
+</head>
+<body>
+    Введите слово.<BR>
+    <script>
+        let where = window.prompt('Куда заглянем сегодня?');
+        switch(where){
+            case 'ВКонтакте': case 'vk' : case 'VK' : case 'ВК' : case 'вк':
+            window.location = 'http://www.vk.com';
+            break;
+            case 'ТикТок': case 'TikTok':
+            window.location = 'https://www.tiktok.com/';
+            break;
+            case 'Фейсбук': case 'Facebook': case 'facebook':
+            window.location = 'https://www.facebook.com/';
+            break;
+            case 'Инстаграм': case 'Instagram' : case 'instagram':
+            window.location = 'https://www.instagram.com/';
+            break;
+            case 'Твиттер': case 'twitter' : case 'Twitter':
+            window.location = 'https://www.twitter.com/';
+            break;
+            default:
+            window.location = 'https://itiu.bsu.by/';
+            }
+    </script>
+</body>
+</html>
