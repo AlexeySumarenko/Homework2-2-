@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Грибы</title>
+</head>
+<body>
+    <script>
+        let col = prompt('Введите цвет гриба (белый, желтый, красный, коричневый)').replace(/\s+/g, '');
+        if (col != 'белый' && col != 'желтый' && col != 'красный' && col != 'коричневый') 
+        {
+        alert('Такого цвета нет в перечне вариантов')
+        }
+        let yubka = prompt('Юбка у гриба есть? (есть / нет)').replace(/\s+/g, '');
+        if (yubka != 'есть' && yubka != 'нет') 
+        {
+        alert('Неверный ответ')
+        }
+        switch (col)
+        {
+            case 'белый' :
+                if (yubka == 'нет')
+                alert('Вы нашли белый гриб');
+                else{
+                alert('с грибами надо быть внимательными')}
+            break;
+            case 'красный' :
+                if (yubka == 'есть')
+                alert('а не мухомор ли это')
+                else if (yubka == 'нет')
+                alert('может это подосиновик')
+            break;
+            case 'желтый':
+            case 'коричневый':
+                alert('с грибами надо быть внимательными')
+            break;
+            default:
+                alert('Вы ввели неверный данные')
+        }
+    </script>
+    
+</body>
+</html>
+
