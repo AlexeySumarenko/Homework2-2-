@@ -8,8 +8,6 @@
 </head>
 <body>
     <script>
-        let w=100000000000000000000;
-        console.log(w);
         let x = prompt('Введите число x: ');
         let y = prompt('Введите число y: ');
         checkX=false;
@@ -35,7 +33,7 @@
             checkY=false;
             break;}
         }
-        if(x.length>=6 || y.length>=4){
+        if(x.length>=10 || y.length>=10){
             alert('Вы ввели слишком большое число!')
         }
         else{
@@ -45,6 +43,15 @@
             if (y==0)
             {
                 z = 1;
+                alert('Число '+ x + ' в степени ' + y +' равно ' + z);
+            }
+            else if (x==0 && y < 0)
+            {
+                alert('Операция невозможна');
+            }
+            else if (x==0)
+            {
+                z = 0;
                 alert('Число '+ x + ' в степени ' + y +' равно ' + z);
             }
             else if (y<0)
