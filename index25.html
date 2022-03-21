@@ -8,78 +8,22 @@
 </head>
 <body>
     <script>
-        let w=100000000000000000000;
-        console.log(w);
-        let x = prompt('Введите число x: ');
-        let y = prompt('Введите число y: ');
-        checkX=false;
-        checkY=false;
-        for (let k=0; k<x.length; k++)
-        {
-        if(/^[0-9.-]/.test(x[k]))
-            {
-            checkX=true;
-            }
-         
-        else{
-            checkX=false;
-            break;}
+        let x = prompt('Введите число x: ').replace(/\s+/g, '');
+        while (isNaN(+x) || x.length > 10|| x.length == 0 || x === '') {
+            alert('Вы ввели либо слишком большое число, либо это не число.\nДавайте попробуем еще раз!')
+        x = prompt('Введите число x', '').replace(/\s+/g, '');
         }
-        for (let k=0; k<y.length; k++)
-        {
-        if(/^[0-9.-]/.test(y[k]))
-            {
-            checkY=true;
-            }
-            else{
-            checkY=false;
-            break;}
-        }
-        if(x.length>=6 || y.length>=4){
-            alert('Вы ввели слишком большое число!')
-        }
-        else{
-        if(checkX ==true && checkY==true){
-            let z = +x;
-            i = 2;
-            if (y==0)
-            {
-                z = 1;
-                alert('Число '+ x + ' в степени ' + y +' равно ' + z);
-            }
-            else if (y<0)
-            {
-                while(i <= y*(-1))
-                {
-                z = z*x;
-                if(z>10000000000000000000){
-                    alert('Вы ввели слишком большое число!')
-                    break;
-                }
-                i++;
-                }
-                z=1/z;
-                alert('Число '+ x + ' в степени ' + y +' равно ' + z);
-            }
-            else 
-            {
-                while(i <= y)
-                {
-                z = z*x;
-                if(z>10000000000000000000){
-                    alert('Вы ввели слишком большое число!')
-                    break;
-                }
-                i++;
-                }
-            alert('Число '+ x + ' в степени ' + y +' равно ' + z);
-            }
-            }
-        
 
-        else alert('Вы ввели не число. Повторите попытку!')
+        let y = prompt('Введите число y: ').replace(/\s+/g, '');
+        while (isNaN(+y) || y.length > 10 || y.length == 0 || y === '') {
+            alert('Вы ввели либо слишком большое число, либо это не число.\nДавайте попробуем еще раз!!')
+        y = prompt('Введите число y', '').replace(/\s+/g, '');
         }
+
+        let z = Math.pow(x, y);
+        if(z == NaN || !isFinite(z))
+            alert('Число '+ x + ' в степени ' + y + ' невозможно вычислить ');
+        else alert('Число '+ x + ' в степени ' + y +' равно ' + z);
     </script>
-    
 </body>
 </html>
